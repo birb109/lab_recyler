@@ -18,7 +18,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     Button btLoad;
     RecyclerView recyclerView;
-    List countrylist=new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,19 +29,14 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        countrylist.add("Vietnam");
-        countrylist.add("US");
-        countrylist.add("China");
-        countrylist.add("Korea");
-        countrylist.add("Thailand");
+        recyclerView = findViewById(R.id.recyclerView);
+        ArrayList<Article> articles = ArticleRepository.getArticles(this);
 
-        recyclerView=findViewById(R.id.recyclerView);
-        btLoad=findViewById(R.id.btLoad);
-        btLoad.setOnClickListener(v->{
-            MyAdapter myAdapter = new MyAdapter(v.getContext(), countrylist);
-            recyclerView.setLayoutManager(
-                    new LinearLayoutManager(this));
-            recyclerView.setAdapter(myAdapter);
-        });
+        ArticleAdapter adapter = new ArticleAdapter(
+                        this,
+                        articles);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this)
+        );
     }
 }
