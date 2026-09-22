@@ -13,8 +13,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:textColor="@color/blue_700"
             android:textSize="26sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
     <ImageView
         android:id="@+id/imgCoverDetail"
         android:layout_width="match_parent"
@@ -26,13 +28,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:textColor="@color/blue_700"/>
     <TextView
         android:id="@+id/txtViewDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textSize="16sp"/>
+        android:textSize="16sp"
+        android:textColor="@color/blue_700" />
     </LinearLayout>
 
 </ScrollView>

@@ -16,8 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    Button btLoad;
     RecyclerView recyclerView;
+    private ArticleAdapter adapter;
+
+    private ArrayList<Article> articles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +32,22 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         recyclerView = findViewById(R.id.recyclerView);
-        ArrayList<Article> articles = ArticleRepository.getArticles(this);
-
-        ArticleAdapter adapter = new ArticleAdapter(
+        articles = ArticleRepository.getArticles(this);
+        adapter = new ArticleAdapter(
                         this,
-                        articles);
+                        articles
+                );
+
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this)
         );
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (adapter != null) {
+            adapter.notifyDataSetChanged();
+        }
     }
 }

@@ -41,13 +41,33 @@ public class ArticleRepository {
                             0
                     )
             );
+
+            articles.add(
+                    new Article(
+                            "Chatter at the birds. ",
+                            "Chatter at window bird plot revenge groom aggressively fall asleep mid-groom. I have not been fed in approximately eleven minutes, and I am beginning to fear for my survival. Sit in box ignore box outside box knock box off shelf sleep. "
+                                    + "The vacuum emerged from the cupboard, and I have relocated to the top of the wardrobe indefinitely. ",
+                            "cover4",
+                            0
+                    )
+            );
+
+            articles.add(
+                    new Article(
+                            "Generated Cat Lorem Ipsum Text",
+                            "I knocked the glass off the table while maintaining direct eye contact, because it was important you saw. "
+                                    + "You bought me a bed, and I appreciate the gesture, but I will be sleeping in the sink. The paperwork is a bed. I climbed into the clean bag for life, and I now live in the bag for life, please plan accordingly. I meant to do that. The box is mine now.\n"
+                                    + "Do not disturb the loaf. My tail moves independently and I take no responsibility for its opinions. ",
+                            "cover5",
+                            0
+                    )
+            );
         }
         return articles;
     }
     public static Article getArticle(
             Context context,
             int position) {
-
         return getArticles(context).get(position);
     }
 }
