@@ -16,8 +16,8 @@
 
         <TextView
             android:id="@+id/txtTitle"
-            android:layout_width="190dp"
-            android:layout_height="0dp"
+            android:layout_width="172dp"
+            android:layout_height="30dp"
             android:layout_marginTop="4dp"
             android:textColor="@color/blue_700"
             android:textSize="22sp"
@@ -59,6 +59,7 @@
             android:textColor="@color/blue_700"
             android:layout_marginTop="10dp"
             android:textSize="15sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
